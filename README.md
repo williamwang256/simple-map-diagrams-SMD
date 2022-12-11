@@ -1,6 +1,6 @@
 # Simple Map Diagrams JavaScript Library
 
-Link to deployed landing page: https://fierce-shelf-08886.herokuapp.com/
+Link to demo page: https://williamwang256.github.io/simple-map-diagrams-SMD/index.html
 
 ## Getting Started
 
