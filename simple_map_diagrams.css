@@ -1,0 +1,250 @@
+/* CSS file for the Simple Map Diagrams Library */
+
+.SMDlist{
+    list-style: none;
+}
+
+.SMDbutton {
+  background-color: #e7e7e7;
+  border: none;
+  color: black;
+  padding: 10px 15px;
+  display: inline-block;
+  margin: 4px 2px;
+  cursor: pointer;
+  width: 250px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px #e7e7e7;
+  font-weight: bold;
+}
+
+.submitButton {
+    background-color: #888888;
+    color: white;
+}
+
+.SMDselect {
+    background-color: #e7e7e7;
+    border: none;
+    color: black;
+    padding: 10px 15px;
+    display: inline-block;
+    margin: 4px 2px;
+    cursor: pointer;
+    width: 250px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px #e7e7e7;
+    font-weight: bold;
+}
+
+.mapButton {
+    width: 60px;
+    height: 20px;
+    margin: 10px;
+    font-size: 10px;
+    padding: 2px;
+}
+
+/* lines css */
+
+.line {
+    position: absolute;
+    z-index: 1;
+    cursor: pointer;
+}
+
+.connection {
+    background-color: #888888;
+}
+
+.path {
+    background-color: #669df6;
+    box-shadow: 0 0 10px #669df6;
+}
+
+.street {
+    background-color: black;
+}
+
+.transitLine {
+    background-color: gold;
+}
+
+.transitLine1 {
+    background-color: green;
+}
+
+.highway {
+    background-color: orange;
+}
+
+/* blocks css */
+
+.block {
+    position: absolute;
+    cursor: pointer;
+}
+
+.park {
+    background-color: lightgreen;
+}
+
+.building {
+    background-color: darkgray;
+}
+
+.water {
+    background-color: lightskyblue;
+}
+
+.hospital {
+    background-color: lightpink;
+}
+
+/* nodes css */
+
+.node {
+    width: 10px; 
+    height: 10px; 
+    border-radius: 50%; 
+    position: absolute;
+    z-index: 2;
+    cursor: pointer;
+}
+
+.poi {
+    border: 3px solid black;
+    background-color: white;
+}
+
+.specialEvent {
+    border: 3px solid palevioletred;
+    background-color: purple;
+}
+
+.incident {
+    border: 3px solid orange;
+    background-color: orangered;
+}
+
+.invisibleIntersection {
+    border: 3px solid white;
+    background-color: white;
+    opacity: 0;
+}
+
+.intersection {
+    border: 3px solid darkgray;
+    background-color: grey;
+    opacity: 1;
+}
+
+.navigationEndPoint {
+    border: 3px solid darkcyan;
+    background-color: #669df6;
+    box-shadow: 0 0 10px #669df6;
+}
+
+/* containers css */
+
+.SMDcontainer {
+    position: relative;
+    overflow: auto;
+    width: auto;
+    padding: 15px;
+    margin-left: 50px;
+    border-radius: 10px;
+}
+
+.mapContainer {
+    position: relative;
+    padding: 10px;
+    float:left;
+    background-color: rgb(229, 234, 240);
+    margin:15px;
+    min-width: 500px;
+}
+
+.titleContainer {
+    position: relative;
+    padding: 5px;
+    float:left;
+    margin:5px;
+    width: 100%;
+}
+
+.sideBox {
+    position: relative;
+    width: 300px;
+    height: auto;
+    padding: 20px;
+}
+
+.underBox {
+    position: relative;
+    width: 500px;
+    height: auto;
+    padding: 20px;
+}
+
+.controlContainer {
+    float: left;
+    box-shadow: 0 0 10px #888888;
+    border-radius: 10px;
+    margin: 10px;
+}
+
+/* misc. css */
+
+.mapTitle {
+	color: #3f3043;
+	font-family: New Baskerville, serif;
+}
+
+.highlight {
+    font-weight: bold;
+    box-shadow: 0 0 20px red;
+}
+
+.hoverOver {
+    font-weight: bold;
+    box-shadow: 0 0 10px #888888;
+}
+
+.placeLabel {
+    position: absolute;
+    width:  40px;
+    font-size: 10px;
+    margin: 5px;
+    color: #333333;
+    padding: 5px;
+    z-index: 2;
+    cursor: pointer;
+}
+
+.controlLabel {
+    font-size: 12px;
+    margin: 5px;
+    color: #aaa49f;;
+    padding: 5px;
+}
+
+/* css for the map legend */
+
+.blockIcon {
+    width: 10px;
+    height: 10px;
+    float: left;
+}
+
+.lineIcon {
+    width: 25px;
+    height: 5px;
+    float: left;
+}
+
+.nodeIcon {
+    width: 10px; 
+    height: 10px; 
+    border-radius: 50%; 
+}

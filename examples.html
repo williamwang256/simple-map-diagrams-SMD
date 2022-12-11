@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" type="text/css" href="simple_map_diagrams.css">
+        <link rel="stylesheet" type="text/css" href="styles.css">
+        <title>Simple Map Diagrams - Examples</title>
+        <script type="text/javascript" src='js/simple_map_diagrams.js'></script>
+    </head>
+    <body>
+        <!-- Header -->
+        <div class="header">
+            <h1 class="headerText">SIMPLE MAP DIAGRAMS</h1>
+            <p class="subHeaderText">
+                Simple Map Diagrams is a versatile JavaScript library that streamlines the creation of
+                highly specific and customizable interactive mini-maps for your webpage.
+            </p>
+        </div>
+
+        <!-- Navigation bar -->
+        <div id="topNavBar">
+            <ul>
+                <li><a class="navButton" href="index.html">HOME</a></li>
+                <li><a class="navButton" href="examples.html">EXAMPLES</a></li>
+                <li><a class="navButton" href="api.html">API</a></li>
+                <li><a class="navButton" href="about.html">ABOUT</a></li>
+            </ul>
+        </div>
+
+        <!-- Examples are below -->
+        <div class='container'>
+
+            <!-- Example #1. -->
+            <h1 class="subtitle">Example #1. Campus Map</h1>
+            <p>
+                Sample use case of the Simple Map Diagrams library on a University's website, 
+                showing an interactive campus map. Streets are arranged in a grid, and different 
+                types of places, such as parks, buildings, roads, and events are located across the map.
+            </p>
+            <div id="example1">
+                <script type="text/javascript" src='js/example1.js'></script>
+            </div>
+            <h3>Example #1. JavaScript Code:</h3>
+            <div class="codeSnippet">
+                <code>
+                    // initialization <br>
+                    const e1_smd = new SimpleMapDiagram(10, 5, 'Main Campus Map', <br>
+                    &emsp;'University of Simple Map Diagrams Campus Map. Click around for ongoing events and information!',
+                    &emsp;'example1') <br><br>
+
+                    // add some connections <br>
+                    e1_smd.addMultipleConnections([ <br>
+                    &emsp;[0, 0, 8, 0], <br>
+                    &emsp;[0, 0, 0, 4], <br>
+                    &emsp;[0, 4, 8, 4], <br>
+                    &emsp;[8, 0, 8, 4], <br>
+                    &emsp;[2, 0, 2, 4], <br>
+                    &emsp;[0, 3, 8, 3], <br>
+                    &emsp;[7, 0, 7, 4], <br>
+                    &emsp;[3, 0, 3, 4], <br>
+                    &emsp;[4, 0, 4, 4], <br>
+                    &emsp;[0, 2, 8, 2] <br>
+                    ]) <br><br>
+
+                    // add some block places <br>
+                    e1_smd.addBlockPlace(4, 2, 1, 2, 'park',        'Central Park',     'The main park on campus. ') <br>
+                    e1_smd.addBlockPlace(0, 1, 1, 1, 'park',        'North Park',       'Smaller park on the north side of campus.') <br>
+                    e1_smd.addBlockPlace(6, 3, 1, 1, 'park',        'John\'s Park',     'Small park in downtown with a pond.') <br>
+                    e1_smd.addBlockPlace(7, 3, 1, 1, 'water',       'Small Pond',       'Small pond south of campus.') <br>
+                    e1_smd.addBlockPlace(3, 3, 1, 1, 'building',    'Chem Lab',         'Chemistry lab at the University of SMD.') <br>
+                    e1_smd.addBlockPlace(1, 3, 1, 1, 'building',    'CS Dept.',         'Department of Computer Science at the University of SMD.') <br>
+                    e1_smd.addBlockPlace(1, 2, 1, 1, 'building',    'Student Centre',   'Student centre at the University of SMD. Come here to ask questions.') <br>
+                    e1_smd.addBlockPlace(2, 3, 1, 1, 'hospital',    'SMD Hospital',     'University of SMD Hospital.') <br> <br>
+                
+                    // add some line places <br>
+                    e1_smd.addLinePlace(0, 0, 8, 0, 'street',       'Main Street',       'Main street north of campus. No closures. Lots of traffic right now.') <br>
+                    e1_smd.addLinePlace(4, 0, 4, 4, 'street',       'University Street', 'Major road through the campus. No closures. Traffic moving well.') <br>
+                    e1_smd.addLinePlace(3, 0, 3, 4, 'transitLine',  'Subway Line 1',     'Line 1 of the city\'s subway system.') <br> <br>
+
+                    // add some node places <br>
+                    e1_smd.addNodePlace(3, 2, 'poi',            'University Station',   'University subway station, right by campus. Access subway line 1 and bus route 2. No disruptions ongoing.') <br>
+                    e1_smd.addNodePlace(3, 4, 'poi',            'Downtown Station',     'Downtown subway station. Access subway line 1 and bus route 3. No disruptions ongoing.') <br>
+                    e1_smd.addNodePlace(6, 2, 'specialEvent',   'Special Event',        'Club fair happening here today 3-4pm.') <br>
+                    e1_smd.addNodePlace(6, 4, 'incident',       'Road closure',         'Construction ongoing. Please avoid the area.') <br> <br>
+
+                    // use the default set up <br>
+                    e1_smd.defaultSetUp()
+                
+                </code>
+            </div>
+            <br><hr><br>
+
+            <!-- Example #2. -->
+            <h1 class="subtitle">Example #2. Subway Map</h1>
+            <p>
+                Sample use case of the Simple Map Diagrams library on a Transit Agency's website, 
+                showing an interactive subway map. The stations can be clicked on by users of the site,
+                in order to display more information about them.
+            </p>
+            <div id="example2">
+                <script type="text/javascript" src='js/example2.js'></script>
+            </div>
+            <h3>Example #2. JavaScript Code:</h3>
+            <div class="codeSnippet">
+                <code>
+                    // initialization <br>
+                    const e2_smd = new SimpleMapDiagram(6, 10, 'TTC Subway Line 1', <br>
+                    &emsp;'Line 1 Subway of the Toronto Transit Commission in Toronto, Ontario, Canada.', <br>
+                    &emsp;'example3') <br> <br>
+
+                    // add some connections <br>
+                    e2_smd.addMultipleConnections([ <br>
+                    &emsp;[5, 0, 5, 9], <br>
+                    &emsp;[3, 5, 3, 9], <br>
+                    &emsp;[3, 9, 5, 9], <br>
+                    &emsp;[1, 5, 3, 5], <br>
+                    &emsp;[1, 0, 1, 5] <br>
+                    ]) <br> <br>
+
+                    // the subway line <br>
+                    e2_smd.addLinePlace(5, 0, 5, 9, 'transitLine') <br>
+                    e2_smd.addLinePlace(3, 5, 3, 9, 'transitLine') <br>
+                    e2_smd.addLinePlace(3, 9, 5, 9, 'transitLine') <br>
+                    e2_smd.addLinePlace(1, 5, 3, 5, 'transitLine') <br>
+                    e2_smd.addLinePlace(1, 0, 1, 5, 'transitLine') <br> <br>
+
+                    // the stations <br>
+                    e2_smd.addNodePlace(1, 0, 'poi', 'Downsview Station', 'End of the line.') <br>
+                    e2_smd.addNodePlace(1, 2, 'poi', 'St. Clair West Station') <br>
+                    e2_smd.addNodePlace(1, 4, 'poi', 'Spadina Station', 'Connection to Line 2.') <br>
+                    e2_smd.addNodePlace(3, 4, 'poi', 'St. George Station', 'Transfer here to Line 2.') <br>
+                    e2_smd.addNodePlace(3, 5, 'poi', 'Museum Station ') <br>
+                    e2_smd.addNodePlace(3, 6, 'poi', 'Queen\'s Park Station', 'Construction ongoing. Expect delays.') <br>
+                    e2_smd.addNodePlace(3, 7, 'poi', 'St. Patrick Station') <br>
+                    e2_smd.addNodePlace(3, 8, 'poi', 'Osgoode Station') <br>
+                    e2_smd.addNodePlace(3, 9, 'poi', 'St. Andrew Station') <br>
+                    e2_smd.addNodePlace(4, 9, 'poi', 'Union Station', 'Connection to GO Train and VIA.') <br>
+                    e2_smd.addNodePlace(5, 9, 'poi', 'King Station') <br>
+                    e2_smd.addNodePlace(5, 8, 'poi', 'Queen Station') <br>
+                    e2_smd.addNodePlace(5, 7, 'poi', 'Dundas Station') <br>
+                    e2_smd.addNodePlace(5, 6, 'poi', 'College Station', 'Elevator out of service.') <br>
+                    e2_smd.addNodePlace(5, 5, 'poi', 'Wellesley Station ') <br>
+                    e2_smd.addNodePlace(5, 4, 'poi', 'Bloor-Yonge Station', 'Connection to Line 2.') <br>
+                    e2_smd.addNodePlace(5, 2, 'poi', 'St. Clair Station') <br>
+                    e2_smd.addNodePlace(5, 0, 'poi', 'Finch Station', 'End of the line.') <br> <br>
+
+                    // add some menus <br>
+                    e2_smd.addFilterByNameBox() <br>
+                    e2_smd.addNavigationMenu() <br>
+                </code>
+            </div>
+            <br><hr><br>
+
+            <!-- Example #3. -->
+            <h1 class="subtitle">Example #3. Special Event Map</h1>
+            <p>
+                Sample use case of the Simple Map Diagrams library on a website for a special event, 
+                showing an interactive map of the event grounds.
+            </p>
+            <div id="example3">
+                <script type="text/javascript" src='js/example3.js'></script>
+            </div>
+            <h3>Example #3. JavaScript Code:</h3>
+            <div class="codeSnippet">
+                <code>
+                    // initialization <br>
+                    const e3_smd = new SimpleMapDiagram(6, 6, 'Summer Festival 2022', <br>
+                    &emsp;'Event ground of the Summer Festival for 2022, in Toronto. ', <br>
+                    &emsp;'example3') <br> <br>
+
+                    // add some connections <br>
+                    e3_smd.addMultipleConnections([ <br>
+                    &emsp;[0, 0, 5, 0], <br>
+                    &emsp;[2, 0, 2, 4], <br>
+                    &emsp;[0, 0, 0, 4], <br>
+                    &emsp;[4, 0, 4, 4], <br>
+                    &emsp;[0, 3, 4, 3], <br>
+                    &emsp;[0, 4, 4, 4], <br>
+                    &emsp;[5, 0, 5, 2], <br>
+                    &emsp;[0, 2, 5, 2] <br>
+                    ]) <br> <br>
+
+                    // add the places <br>
+                    e3_smd.addBlockPlace(0, 3, 4, 1, 'park', 'Lakeside Park', 'Today\'s events: ') <br>
+                    e3_smd.addBlockPlace(0, 0, 2, 2, 'park', 'Robert Smith Park', 'Today\'s events: ') <br>
+                    e3_smd.addBlockPlace(0, 2, 2, 1, 'building', 'Community Centre', 'Today\'s events: ') <br>
+                    e3_smd.addBlockPlace(0, 4, 5, 1, 'water', 'Lake Ontario') <br>
+                    e3_smd.addLinePlace(2, 0, 2, 4, 'street', 'Lakefront Road', 'ROAD CLOSED DUE TO ONGOING FESTIVAL.') <br>
+                    e3_smd.addNodePlace(2, 1, 'incident', 'Road Closure', 'Follow detour signs placed at the intersection.') <br>
+                    e3_smd.addNodePlace(0, 2, 'specialEvent', 'Live Show!', 'Come see the live show from 1-2pm today!') <br>
+                    e3_smd.addNodePlace(2, 3, 'specialEvent', 'Live Show!', 'Come see the live show from 1-2pm today!') <br> <br>
+
+                    // add some menus <br>
+                    e3_smd.addInfoBox() <br>
+                    e3_smd.addFilterByNameBox() <br>
+                </code>
+            </div>
+            <br><hr><br>
+        </div>
+
+    </body>
+</html>

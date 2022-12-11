@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" type="text/css" href="simple_map_diagrams.css">
+        <link rel="stylesheet" type="text/css" href="styles.css">
+        <title>Simple Map Diagrams - API List</title>
+    </head>
+    <body>
+
+        <!-- Header -->
+        <div class="header">
+            <h1 class="headerText">SIMPLE MAP DIAGRAMS</h1>
+            <p class="subHeaderText">
+                Simple Map Diagrams is a versatile JavaScript library that streamlines the creation of
+                highly specific and customizable interactive mini-maps for your webpage.
+            </p>
+        </div>
+
+        <!-- Navigation bar -->
+        <div id="topNavBar">
+            <ul>
+                <li><a class="navButton" href="index.html">HOME</a></li>
+                <li><a class="navButton" href="examples.html">EXAMPLES</a></li>
+                <li><a class="navButton" href="api.html">API</a></li>
+                <li><a class="navButton" href="about.html">ABOUT</a></li>
+            </ul>
+        </div>
+
+        <!-- Information below -->
+        <div class="container">
+
+            <!-- Getting Started -->
+            <h1>Getting Started</h1>
+            <ul>
+                <li>
+                    <p>
+                        The first thing you will need to do is to load the <code class="inlineCode">simple_map_diagrams.js</code> script 
+                        into the HTML file of your webpage. It includes the code for the core functionality of the 
+                        Simple Map Diagrams Library that is required before you can start using it.
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        Next, the <code class="inlineCode">simple_map_diagrams.css</code> file needs to be linked into the HTML file.
+                        It provides all the styling used by the Simple Map Diagrams library.
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        And that's it! No other external modules or libraries are needed. Simple Map Diagramss uses 
+                        Vanilla JavaScript only.
+                    </p>
+                </li>
+            </ul>
+            <p>
+                Now that you have the Simple Map Diagrams code loaded in, you can start adding maps to you webpage!
+                In a separate script, you may instantiate and set up an instance of Simple Map Diagram as follows:
+            </p>
+            <code class="inlineCode">
+                const smd = new SimpleMapDiagram(10, 5, 'sample title', 'sample description', 'example1') <br>
+            </code>
+            <p>
+                This call will go through a series of tasks to set up all the necessary objects and containers needed 
+                for the map, and add it to the document, under the container specified by the given id (in this case, 
+                the element with id 'example1'). Once this is done, you are ready to start customizing the map! See 
+                the list of API functions below for instructions on how to do so.
+            </p>
+            <br>
+            <hr>
+            <br>
+
+            <!-- API List -->
+            <h1>List of API Functions</h1>
+
+            <h3><code class="inlineCode">smdInstance.defaultSetUp()</code></h3>
+            <ul>
+                <li>Completes a default setup of the map diagram, including all available features. You may choose
+                    not to use this function, and instead add individual features separately. This gives you the
+                    freedom to customize the layout of your website as you choose (refer to the functions at the end of
+                    this list). Note: must be called after creating all places on the map that are to be included.</li>
+                <li>Arguments: N/A.</li>
+                <li>Return: N/A.</li>
+            </ul>
+            <br>
+
+            <h3><code class="inlineCode">smdInstance.addConnection(x1, y1, x2, y2)</code></h3>
+            <ul>
+                <li>Adds a connection between the nodes represented by the two given points.</li>
+                <li>Arguments: the x-y coordinates of the two points to connect.</li>
+                <li>Return: true on success, false on failure (e.g., values out of bound).</li>
+            </ul>
+            <br>
+
+            <h3><code class="inlineCode">smdInstance.addMultipleConnections(connections)</code></h3>
+            <ul>
+                <li>Adds add multiple connections to the graph at once.</li>
+                <li>Arguments: a list of the connections to add, in the following form: 
+                        [[x1, y1, x2, y2], [...], [...], ... ]</li>
+                <li>Return: true on success, false on failure (e.g., values out of bound)</li>
+            </ul>
+            <br>
+
+            <h3><code class="inlineCode">smdInstance.addBlockPlace(x, y, width, height, type, name, description)</code></h3>
+            <ul>
+                <li>Adds a block place to the map, i.e., a place that falls between the connections on the map. 
+                    Note: type must match one of the pre-defined types below.</li>
+                <li>Arguments: the x-y coordinates, width and height, name, title, and description of the place.</li>
+                <li>Return: true on success, false on failure (e.g., unrecognized type).</li>
+            </ul>
+            <br>
+
+            <h3><code class="inlineCode">smdInstance.addLinePlace(x1, y1, x2, y2, type, name, description)</code></h3>
+            <ul>
+                <li>Adds a line place to the map, i.e., a place that falls on a connection on the map. 
+                    Note: type must match one of the pre-defined types below.</li>
+                <li>Arguments: the x-y coordinates of the start and end, name, title, and description of the place.</li>
+                <li>Return: true on success, false on failure (e.g., unrecognized type).</li>
+            </ul>
+            <br>
+
+            <h3><code class="inlineCode">smdInstance.addNodePlace(x, y, type, name, description)</code></h3>
+            <ul>
+                <li>Adds a node place to the map, i.e., a place that falls on a node of the map. 
+                    Note: type must match one of the pre-defined types below.</li>
+                <li>Arguments: the x-y coordinates of the start and end, name, title, and description of the place.</li>
+                <li>Return: true on success, false on failure (e.g., unrecognized type).</li>
+            </ul>
+            <br>
+
+            <h3><code class="inlineCode">smdInstance.addInfoBox()</code></h3>
+            <ul>
+                <li>Adds a box to the map to display information about places when clicked on by a user.</li>
+                <li>Arguments: N/A.</li>
+                <li>Return: N/A.</li>
+            </ul>
+            <br>
+
+            <h3><code class="inlineCode">smdInstance.addNavigationMenu()</code></h3>
+            <ul>
+                <li>Adds a navigation menu to the map where the user will be able to plan out route between places.</li>
+                <li>Arguments: N/A.</li>
+                <li>Return: N/A.</li>
+            </ul>
+            <br>
+
+            <h3><code class="inlineCode">smdInstance.addFilterByClassBox()</code></h3>
+            <ul>
+                <li>API function to add a filter box which will give users the option to filter by certain place type.
+                    Note: must be called after places are added to map.</li>
+                <li>Arguments: N/A.</li>
+                <li>Return: N/A.</li>
+            </ul>
+            <br>
+
+            <h3><code class="inlineCode">smdInstance.addFilterByNameBox()</code></h3>
+            <ul>
+                <li>API function to add a filter box which will give users the option to filter by certain place name.
+                    Note: must be called after places are added to map.</li>
+                <li>Arguments: N/A.</li>
+                <li>Return: N/A.</li>
+            </ul>
+            <br>
+
+            <h3><code class="inlineCode">smdInstance.addLegend()</code></h3>
+            <ul>
+                <li>API function to add a legend to the map, based on the types of places that are already on the map.
+                    Note: must be called after places are added to map.</li>
+                <li>Arguments: N/A.</li>
+                <li>Return: N/A.</li>
+            </ul>
+            <br>
+            <hr>
+            <br>
+            
+            <!-- Place Types -->
+            <h1>Place Types</h1>
+            <p>Listed below are all the categories of places currently supported.</p>
+            <h3>Block Places:</h3>
+            <ul>
+                <li><div class="blockDemo park"></div>Park</li>
+                <li><div class="blockDemo building"></div>Building</li>
+                <li><div class="blockDemo water"></div>Water</li>
+                <li><div class="blockDemo hospital"></div>Hospital</li>
+            </ul>
+            <br>
+
+            <h3>Line Places:</h3>
+            <ul>
+                <li><div class="lineDemo street"></div>Street</li>
+                <li><div class="lineDemo transitLine"></div>Transit Line (version 1)</li>
+                <li><div class="lineDemo transitLine1"></div>Transit Line (version 2)</li>
+                <li><div class="lineDemo highway"></div>Highway</li>
+            </ul>
+            <br>
+
+            <h3>Node Places:</h3>
+            <ul>
+                <li><div class="nodeDemo poi"></div>Point of Interest</li>
+                <li><div class="nodeDemo specialEvent"></div>Special Event</li>
+                <li><div class="nodeDemo incident"></div>Incident</li>
+            </ul>
+        </div>
+    </body>
+</html>
